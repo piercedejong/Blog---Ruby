@@ -42,7 +42,11 @@
           <h4>Pierce's Blog</h4>
 
           <ul class="list-group sidebar">
-            <a href="<%= '/auth/google' %>" class="list-group-item list-group-item-action">Sign-in</a>
+            <% if !current_user %>
+              <a href="<%= '/auth/google' %>" class="list-group-item list-group-item-action">Sign-in</a>
+            <% else %>
+              <a href="<%= '/logout' %>" class="list-group-item list-group-item-action">Sign-out</a>
+            <% end %>
             <a href="<%= articles_path %>" class="list-group-item list-group-item-action-primary">Home</a>
             <a href="<%= new_article_path %>" class="list-group-item list-group-item-action">New Article</a>
             <a href="https://github.com/piercedejong" class="list-group-item list-group-item-action" target="_blank"> GitHub </a>
