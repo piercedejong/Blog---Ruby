@@ -8,7 +8,8 @@
     <hr>
     <h5 id="blog-time"><span class="glyphicon glyphicon-time"></span>
       Posted on: <%=@article.created_at.strftime("%B %d, %Y at %I:%M%p")%> |
-      <% if @current_user %>
+      <% if current_user %>
+        <%= link_to 'Delete', article_path(@article), method: :delete,data: {confirm: "Are you sure?"} %> | 
         <%= link_to 'Edit', edit_article_path(@article) %>
       <% end %>
     </h5>
@@ -18,20 +19,9 @@
     <p id="blog-text"><%= @article.text %> </p>
     <br>
 
-    <div class="well">
-      <h4>Leave a Comment:</h4>
-      <form role="form">
-        <div class="form-group">
-          <textarea class="form-control" rows="3"></textarea>
-        </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-    <br>
-
     <div class=blog-comments>
-        <%= render @article.comments %>
-        <%= render 'comments/form' %>
+      <%= render @article.comments %>
+      <%= render 'comments/form' %>
     </div>
   </div>
 </div>
