@@ -6,7 +6,7 @@
   <div class="media-body">
       <h4 class="media-heading"><%= comment.commenter %>
           <small><%= comment.created_at.strftime("%B %d, %Y at %I:%M%p") %> |
-              <% if @current_user && (@current_user.id == comment.user_id  || @current_user.id == comment.article.user_id) %>
+              <% if current_user && current_user.id == comment.user_id %>
                 <%= link_to 'Delete', [comment.article, comment],
                     method: :delete,
                     data: { confirm: 'Are you sure?'} %>
