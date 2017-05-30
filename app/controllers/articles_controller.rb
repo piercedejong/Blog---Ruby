@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :check_current_user, except: [:index, :show]
+
   def index
     @articles = Article.all
   end
@@ -42,6 +44,12 @@ class ArticlesController < ApplicationController
   end
 
   private
+    def check_current_user
+      if !@current_user
+        redirect_to articles_path
+      end
+    end
+
     def article_params
       params.require(:article).permit(:title, :about, :text)
     end

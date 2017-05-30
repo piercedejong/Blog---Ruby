@@ -8,7 +8,9 @@
     <hr>
     <h5 id="blog-time"><span class="glyphicon glyphicon-time"></span>
       Posted on: <%=@article.created_at.strftime("%B %d, %Y at %I:%M%p")%> |
-      <%= link_to 'Edit', edit_article_path(@article) %>
+      <% if @current_user %>
+        <%= link_to 'Edit', edit_article_path(@article) %>
+      <% end %>
     </h5>
     <hr>
     <h3 id="blog-about"><%= @article.about %> </h3>
@@ -29,6 +31,7 @@
 
     <div class=blog-comments>
         <%= render @article.comments %>
+        <%= render 'comments/form' %>
     </div>
   </div>
 </div>
