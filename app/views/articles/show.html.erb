@@ -1,11 +1,9 @@
-
-
-
 <div class="col-sm-10 blog-post">
   <div class="blog-info">
     <hr>
-    <h1 id="blog-title"><%= @article.title %></h1>
+    <h1 id="blog-title"><%= @article.title %> <small>- <%= @article.user.name %></small></h1>
     <hr>
+
     <h5 id="blog-time"><span class="glyphicon glyphicon-time"></span>
       Posted on: <%=@article.created_at.strftime("%B %d, %Y at %I:%M%p")%> |
       <% if current_user && current_user.id.to_s == @article.user_id %>

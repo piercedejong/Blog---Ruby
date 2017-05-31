@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/logout', to: "sessions#destroy"
 
-  get 'users/:id/articles' => 'users#aticles', :as => :user_articles
+  get '/user_articles', to: "users#index"
 
   resources :articles do
     resources :comments
@@ -15,6 +15,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :destroy]
 
-  root 'sessions#new'
+  root 'articles#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
