@@ -1,14 +1,15 @@
 <div class="col-sm-10">
-  <h4>My Posts</h4>
-  <% current_user.articles.reverse.each do |article| %>
+  <h4><%= @user.name %>'s Posts</h4>
+  <% @user.articles.reverse.each do |article| %>
     <hr>
     <h2><a href = "<%= article_path(article) %>"><%= article.title %></a></h2>
     <h4><%= article.about %></h4>
-    <h5><span class="glyphicon glyphicon-time"></span> Post by Pierce de Jong, <%=article.created_at.strftime("%B %d, %Y")%></h5>
+    <h5><span class="glyphicon glyphicon-time"></span> Post by <%= @user.name %>, <%=article.created_at.strftime("%B %d, %Y")%></h5>
     <h5>
-      <%= link_to 'Delete', article_path(article), method: :delete,data: {confirm: "Are you sure?"} %>
-      <%= link_to 'Edit', edit_article_path(article) %>
-      <span class="label label-danger">Tag</span> <span class="label label-primary">Tag</span>
+      <% if current_user && current_user.id.to_s == article.user_id%>
+        <%= link_to 'Delete', article_path(article), method: :delete,data: {confirm: "Are you sure?"} %> |
+        <%= link_to 'Edit', edit_article_path(article) %>
+      <% end %>
     </h5>
     <hr>
   <% end %>
