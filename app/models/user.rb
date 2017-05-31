@@ -4,7 +4,8 @@ class User < ApplicationRecord
   def self.create_user(auth_hash)
     User.create(
     email: auth_hash.info.email,
-    name: auth_hash.info.nickname
+    name: auth_hash.info.name,
+    photo: auth_hash.info.image
     )
   end
 

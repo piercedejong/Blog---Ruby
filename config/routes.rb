@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/logout', to: "sessions#destroy"
 
+  get 'users/:id/articles' => 'users#aticles', :as => :user_articles
+
   resources :articles do
     resources :comments
   end

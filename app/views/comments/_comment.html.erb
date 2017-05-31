@@ -1,17 +1,18 @@
 
 <div class="media">
   <a class="pull-left" href="#">
-      <img class="media-object" src="http://placehold.it/64x64" alt="">
+      <img class="media-object" src="<%= comment.user.photo %>" alt="">
   </a>
   <div class="media-body">
-      <h4 class="media-heading"><%= comment.commenter %>
-          <small><%= comment.created_at.strftime("%B %d, %Y at %I:%M%p") %> |
-              <% if current_user && current_user.id.to_s == comment.user_id %>
-                <%= link_to 'Delete', [comment.article, comment],
-                    method: :delete,
-                    data: { confirm: 'Are you sure?'} %>
-              <% end %>
-          </small>
+      <h4 class="media-heading"><%= comment.user.name %>
+
+        <small><%= comment.created_at.strftime("%B %d, %Y at %I:%M%p") %> |
+        <% if current_user && (current_user.id.to_s == comment.user_id || current_user.id.to_s == comment.article.user_id)%>
+          <%= link_to 'Delete', [comment.article, comment],
+              method: :delete,
+              data: { confirm: 'Are you sure?'} %>
+        <% end %>
+        </small>
       </h4>
           <%= comment.body %>
   </div>

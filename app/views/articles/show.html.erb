@@ -8,8 +8,8 @@
     <hr>
     <h5 id="blog-time"><span class="glyphicon glyphicon-time"></span>
       Posted on: <%=@article.created_at.strftime("%B %d, %Y at %I:%M%p")%> |
-      <% if current_user %>
-        <%= link_to 'Delete', article_path(@article), method: :delete,data: {confirm: "Are you sure?"} %> | 
+      <% if current_user && current_user.id.to_s == @article.user_id %>
+        <%= link_to 'Delete', article_path(@article), method: :delete,data: {confirm: "Are you sure?"} %> |
         <%= link_to 'Edit', edit_article_path(@article) %>
       <% end %>
     </h5>
@@ -21,7 +21,9 @@
 
     <div class=blog-comments>
       <%= render @article.comments %>
-      <%= render 'comments/form' %>
+      <% unless current_user == nil %>
+        <%= render 'comments/form' %>
+      <% end %>
     </div>
   </div>
 </div>
