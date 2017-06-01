@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog - Pierce de Jong</title>
+    <title>Forum - Home Page</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -29,17 +29,23 @@
   </style>
   </head>
 
-  <body>
+  <body id="everything">
     <div class="jumbotron text-center">
-      <h1 id="title">My Blog</h1>
-      <p id="author">by: Pierce de Jong</p>
+      <h1 id="title">Best Forum NA</h1>
     </div>
 
     <div class="container-fluid">
       <div class="row content">
       <!--Side Bar -->
         <div class="col-sm-2 sidenav">
-          <h4>Pierce's Blog</h4>
+          <h4>
+            Signed-in:
+            <% if current_user %>
+              <%= current_user.name %>
+            <%else %>
+              No one
+            <% end %>
+          </h4>
 
           <ul class="list-group sidebar">
             <a href="<%= articles_path %>" class="list-group-item list-group-item-action-primary">Home</a>
