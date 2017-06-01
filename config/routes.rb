@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   get '/logout', to: "sessions#destroy"
 
-  get '/current_user_articles', to: "users#index"
-
   #get '/user_articles', to: "user#show"
 
   get 'users/:id/articles' => 'users#index', :as => :user_articles

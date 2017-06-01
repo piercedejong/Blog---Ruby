@@ -9,13 +9,10 @@ RSpec.describe ArticlesController, type: :controller do
     {article: {title: "Test Post", text: "This is a test post, text text text",
     about: "This is the about", user_id: current_user.id.to_s}}
   end
-
   before do
     session[:user_id] = current_user.id
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:google]
   end
-
-
 
   describe "Post #create" do
     context "when creating new article" do
