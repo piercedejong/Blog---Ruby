@@ -30,8 +30,17 @@
   </head>
 
   <body id="everything">
-    <div class="jumbotron text-center">
-      <h1 id="title">Best Forum NA</h1>
+    <div class="jumbotron">
+      <div class="text-right">
+        <% if !current_user %>
+          <a href="<%= '/auth/google' %>">Sign-in</a>
+        <% else %>
+          <a href="<%= '/logout' %>">Sign-out</a>
+        <% end %>
+      </div>
+      <div class="text-center">
+        <h1 id="title">Best Forum NA</h1>
+      </div>
     </div>
 
     <div class="container-fluid">
@@ -49,10 +58,7 @@
 
           <ul class="list-group sidebar">
             <a href="<%= articles_path %>" class="list-group-item list-group-item-action-primary">Home</a>
-            <% if !current_user %>
-              <a href="<%= '/auth/google' %>" class="list-group-item list-group-item-action">Sign-in</a>
-            <% else %>
-              <a href="<%= '/logout' %>" class="list-group-item list-group-item-action">Sign-out</a>
+            <% if current_user %>
               <a href="<%= new_article_path %>" class="list-group-item list-group-item-action">New Post</a>
               <a href="<%= user_articles_path(current_user.id) %>" class="list-group-item list-group-item-action">My Posts</a>
             <% end %>

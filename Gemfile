@@ -39,6 +39,10 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'sinatra'
 gem 'omniauth-google-oauth2'
 
+gem 'capybara'
+
+gem 'simplecov', :require => false, :group => :test
+
 group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
