@@ -1,7 +1,8 @@
 language: ruby
 rvm:
   - 2.3
-  - jruby
+ - jruby
+ - rbx-2
 
 services:
   - postgresql
