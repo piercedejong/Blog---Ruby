@@ -1,4 +1,12 @@
 language: ruby
 rvm:
-  - 2.2
+  - 2.3
   - jruby
+
+services:
+  - postgresql
+
+script: bundle exec rspec spec
+
+before_script:
+  - RAILS_ENV=test bundle exec rake db:create
