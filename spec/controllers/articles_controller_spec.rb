@@ -24,6 +24,17 @@ RSpec.describe ArticlesController, type: :controller do
         expect(response).to redirect_to article_path(Article.last.id)
       end
     end
+
+    context "create a new article with incorrect params" do
+      let :params do
+        {article: {title: "Test", text: "This is a test post, NEW",
+        about: "This is the about", user_id: current_user.id.to_s}}
+      end
+      it "fails to create an article for the current user and redirects to article_path(param[:id])" do
+        expect {post(:create, params)}.to change {Article.count}.by(0)
+        expect(session[:user_id]).to_not be_nil
+      end
+    end
   end
 
   describe "PUT #update" do
