@@ -7,7 +7,7 @@ RSpec.describe Article, type: :model do
   let!(:invalid_article) {Article.create(title: "Test", text: "Hello World, what an amazing day", user_id: user.id)}
 
   context "when passed valid params" do
-    it "saves and creates a user" do
+    it "creates a new article" do
       expect(valid_article.valid?).to eq true
       expect(valid_article.title).to eq "Test Post"
       expect(valid_article.text).to eq "Hello World, what an amazing day"
@@ -17,7 +17,7 @@ RSpec.describe Article, type: :model do
   end
 
   context "when passed invalid params" do
-    it "saves and creates a user" do
+    it "fails to create an article" do
       expect(invalid_article.valid?).to eq false
       expect(invalid_article.errors).to have_key(:title)
       expect(invalid_article.errors).to have_key(:about)

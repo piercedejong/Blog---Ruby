@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "c:/Sites/forum/spec/models/article_spec.rb": [
+      "c:/Sites/forum/spec/models/comment_spec.rb": [
         1,
         null,
         1,
@@ -9,18 +9,16 @@
         3,
         3,
         3,
+        3,
         null,
         1,
         1,
         1,
         1,
         1,
-        1,
-        1,
         null,
         null,
         null,
-        1,
         1,
         1,
         1,
@@ -363,8 +361,15 @@
         null,
         null,
         null
+      ],
+      "c:/Sites/forum/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1496427738
+    "timestamp": 1496429602
   }
 }
