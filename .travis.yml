@@ -6,7 +6,9 @@ rvm:
 services:
   - postgresql
 
-script: bundle exec rspec spec
+script:
+  - bundle exec rspec spec
 
 before_script:
   - RAILS_ENV=test bundle exec rake db:create
+  - bin/rails db:migrate RAILS_ENV=test
