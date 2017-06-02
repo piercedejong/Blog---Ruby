@@ -31,15 +31,15 @@
 
   <body id="everything">
     <div class="jumbotron">
-      <div class="text-right">
-        <% if !current_user %>
-          <a href="<%= '/auth/google' %>">Sign-in</a>
-        <% else %>
-          <a href="<%= '/logout' %>">Sign-out</a>
-        <% end %>
-      </div>
       <div class="text-center">
         <h1 id="title">Best Forum NA</h1>
+      </div>
+      <div class="text-right">
+        <% if !current_user %>
+          <h3><a href="<%= '/auth/google' %>">Sign-in</a></h3>
+        <% else %>
+          <h3><a href="<%= '/logout' %>">Sign-out</a></h3>
+        <% end %>
       </div>
     </div>
 

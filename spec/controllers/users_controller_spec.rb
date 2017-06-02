@@ -18,7 +18,7 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "when it's a RETURNING user" do
+    context "when it's a RETURNING  an exisitng user" do
       before do
         User.create(name: "Pierce Test")
       end
@@ -27,7 +27,6 @@ RSpec.describe UsersController, type: :controller do
         post :create, provider: :google
         expect(User.find_by(name: "Pierce Test")).to be_a User
         expect(session[:user_id]).to_not be_nil
-        expect(response).to redirect_to articles_path
         expect(response).to have_http_status 302
         expect(response).to redirect_to articles_path
       end

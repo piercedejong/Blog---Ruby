@@ -23,8 +23,7 @@
 }
 
 .jumbotron{
-  background-color: #ccefff;
-  font-family: 'PT Sans', sans-serif;
+  background-color:transparent !important;
   width: 100%;
   z-index: 999;
 }
@@ -41,7 +40,7 @@
 
 #title {
   color: indigo;
-  font-size: 200px;
+  font-size: 150px;
 }
 
 footer {
