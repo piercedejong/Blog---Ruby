@@ -1,8 +1,7 @@
 language: ruby
 rvm:
- - 2.3
+ - 2.3.4
  - jruby
- - rbx-2
 
 services:
   - postgresql
@@ -12,4 +11,3 @@ script:
 
 before_script:
   - RAILS_ENV=test bundle exec rake db:create
-  - RAILS_ENV=test bin/rails db:migrate RAILS_ENV=test
