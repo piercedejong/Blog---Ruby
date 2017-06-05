@@ -1,43 +1,21 @@
 # Forum
 
-Rails app that allows users to create articles
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# Mute Twitter Spoilers
-
-Rails app that helps you quickly mute multiple followers that are tweeting spoilers on your timeline.
+Rails app that allows users to create posts for other people to view and post comments to
 
 ### Project Goals
-This started as a one-day Sinatra project, that I'm now converting into a Rails app. I wanted to play around a bit more with the Twitter API and implement OAuth, while practicing test-driven development in Rails.
+
+This was my first ruby on rails project. I wanted to understand the basic concept of a rails app and using an API to sign-in and out with the Google+ API using OAuth.
 
 ### How the app works
-You enter a keyword that you don't want to see tweets of on the search page, it returns the list of users whose recent tweets currently contain that keyword, by analyzing the first 100 tweets on your timeline. By default, the search results are hidden.
 
-There's a button to "Show Tweets", if you want to see the contents of those user's tweets. Then, there's a "Mute Phrase" button that mutes those users, clearing your *current* timeline of tweets containing that phrase.
+You sign-in via the button at the top right the app. It redirects you to the Google sign-in page. Once signed-in, you have the ability to create a new Post for other users to view. Signed-in users will then be able to comment on the post.
 
-Note: This app doesn't currently automate the muting process yet, so you have to use this app first every time before reading new tweets on your timeline, if you don't want to see spoilers.
+The original creator of the Post has the ability to edit/delete his/her post and any comments posted on it.
+
 
 ## Installation
 
-* First, go to https://apps.twitter.com/ and create your Twitter App account in order to retrieve your Consumer Token and Consumer Secret.
+* First, go to https://console.developers.google.com/ and create your Twitter App account in order to retrieve your Consumer Token and Consumer Secret.
 
 * Second, clone the app onto your local machine, open it up and create a .env file. Enter your Consumer key and secret into this .env file as shown below:
 
