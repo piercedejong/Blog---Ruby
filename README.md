@@ -12,6 +12,7 @@ You sign-in via the button at the top right the app. It redirects you to the Goo
 
 The original creator of the Post has the ability to edit/delete his/her post and any comments posted on it.
 
+
 ## Installation
 
 * First, go to https://console.developers.google.com/ and create your Twitter App account in order to retrieve your Consumer Token and Consumer Secret.
