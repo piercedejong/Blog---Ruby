@@ -6,9 +6,9 @@
   <br>
   <% @user.articles.reverse.each do |article| %>
     <hr>
-    <h2><a href="<%= article_path(article) %>"><%= article.title %></a></h2>
+    <h2><a href="<%= article_path(article.uuid) %>"><%= article.title %></a></h2>
     <h4><%= article.about %></h4>
-    <h5><span class="glyphicon glyphicon-time"></span> Post by <a href="<%= user_articles_path(@user.id) %>"><%= article.user.name %></a>, <%=article.created_at.strftime("%B %d, %Y")%></h5>
+    <h5><span class="glyphicon glyphicon-time"></span> Post by <a href="<%= user_articles_path(@user.uuid) %>"><%= article.user.name %></a>, <%=article.created_at.strftime("%B %d, %Y")%></h5>
     <h5>
       <% if current_user && current_user.id.to_s == article.user_id%>
         <%= link_to 'Delete', article_path(article.uuid), method: :delete,data: {confirm: "Are you sure?"} %> |

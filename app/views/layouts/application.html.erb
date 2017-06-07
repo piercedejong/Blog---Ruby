@@ -60,7 +60,7 @@
             <a href="<%= articles_path %>" class="list-group-item list-group-item-action-primary">Home</a>
             <% if current_user %>
               <a href="<%= new_article_path %>" class="list-group-item list-group-item-action">New Post</a>
-              <a href="<%= user_articles_path(current_user.id) %>" class="list-group-item list-group-item-action">My Posts</a>
+              <a href="<%= user_articles_path(current_user.uuid) %>" class="list-group-item list-group-item-action">My Posts</a>
             <% end %>
             <a href="https://github.com/piercedejong/Blog---Ruby" class="list-group-item list-group-item-action" target="_blank"> GitHub </a>
           </ul>

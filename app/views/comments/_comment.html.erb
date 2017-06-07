@@ -1,10 +1,9 @@
-
 <div class="media">
   <a class="pull-left" href="#">
       <img class="media-object" src="<%= comment.user.photo %>" alt="">
   </a>
   <div class="media-body">
-      <h4 class="media-heading"><a href="<%= user_articles_path(comment.user_id) %>"><%= comment.user.name %></a>
+      <h4 class="media-heading"><a href="<%= user_articles_path(comment.user_uuid) %>"><%= comment.user.name %></a>
 
         <small><%= comment.created_at.strftime("%B %d, %Y at %I:%M%p") %> |
         <% if current_user && (current_user.id.to_s == comment.user_id || current_user.id.to_s == comment.article.user_id)%>
