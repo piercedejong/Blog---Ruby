@@ -11,8 +11,8 @@
     <h5><span class="glyphicon glyphicon-time"></span> Post by <a href="<%= user_articles_path(@user.id) %>"><%= article.user.name %></a>, <%=article.created_at.strftime("%B %d, %Y")%></h5>
     <h5>
       <% if current_user && current_user.id.to_s == article.user_id%>
-        <%= link_to 'Delete', article_path(article), method: :delete,data: {confirm: "Are you sure?"} %> |
-        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Delete', article_path(article.uuid), method: :delete,data: {confirm: "Are you sure?"} %> |
+        <%= link_to 'Edit', edit_article_path(article.uuid) %>
       <% end %>
     </h5>
     <hr>
