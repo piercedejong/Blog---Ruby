@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.new(article_params)
+    @article.update(user_uuid: current_user.uuid)
     if @article.save
       redirect_to article_path(@article.uuid)
     else
