@@ -1,5 +1,7 @@
 <%= form_for @article do |f| %>
 
+  <%= hidden_field_tag :uuid, @article.uuid %>
+
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
