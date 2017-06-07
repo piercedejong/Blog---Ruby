@@ -15,7 +15,7 @@ The original creator of the Post has the ability to edit/delete his/her post and
 
 ## Installation
 
-* First, go to https://console.developers.google.com/ and create a new project, with http://localhost:3000/auth/google/callback as the redirect URL.
+* First, go to https://console.developers.google.com/ and create a new project, go to the credentials tab and create a new one with http://localhost:3000/auth/google/callback as the redirect URL.
 
 * Second, go to the Library tab and enable both the Google+ and Contacts API, and copy the Client ID and Client Secret
 
