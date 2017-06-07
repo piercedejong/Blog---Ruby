@@ -15,19 +15,19 @@ The original creator of the Post has the ability to edit/delete his/her post and
 
 ## Installation
 
-* First, go to https://console.developers.google.com/ and create your Twitter App account in order to retrieve your Consumer Token and Consumer Secret.
+* First, go to https://console.developers.google.com/ and create a new project, with http://localhost:3000/auth/google/callback for the redirect URL.
 
-* Second, clone the app onto your local machine, open it up and create a .env file. Enter your Consumer key and secret into this .env file as shown below:
+* Second, go to the Library tab and enable both the Google+ and Contacts API, and copy the Client ID and Client Secret
+
+* Third, clone the app onto your local machine, open it up and create a .env file. Enter your Client ID and Secret into this .env file as shown below:
 
 ````
-CONSUMER_KEY=XXXXXXXXXXXXXXXXXX
-CONSUMER_SECRET=XXXXXXXXXXXXXXXXXX
+CLIENT_ID=XXXXXXXXXXXXXXXXXX
+CLIENT_SECRET=XXXXXXXXXXXXXXXXXX
 ````
 
-* Third, ```` bundle install ````. Then, ```` rails s````, to launch the app. In your browser, go to ```` localhost:3000````.
+* Fourth run the following commands on your terminal, ```` bundle install ````. Then, ```` rails s````, to launch the app. In your browser, go to ```` localhost:3000````.
 
 ### Remaining Backlog Items
 
-* Figure out how to automate this process.
-* Turn it into a browser extension.
-* Turn it into a React Native app (just to learn React Native).
+*
