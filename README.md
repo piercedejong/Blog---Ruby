@@ -1,6 +1,6 @@
 # Forum
 
-Rails app that allows users to create posts for other people to view and post comments to
+Ruby on Rails app that allows users to create posts for other people to view and post comments to
 
 ### Project Goals
 
@@ -15,7 +15,7 @@ The original creator of the Post has the ability to edit/delete his/her post and
 
 ## Installation
 
-* First, go to https://console.developers.google.com/ and create a new project, with http://localhost:3000/auth/google/callback for the redirect URL.
+* First, go to https://console.developers.google.com/ and create a new project, with http://localhost:3000/auth/google/callback as the redirect URL.
 
 * Second, go to the Library tab and enable both the Google+ and Contacts API, and copy the Client ID and Client Secret
 
@@ -26,8 +26,10 @@ CLIENT_ID=XXXXXXXXXXXXXXXXXX
 CLIENT_SECRET=XXXXXXXXXXXXXXXXXX
 ````
 
-* Fourth run the following commands on your terminal, ```` bundle install ````. Then, ```` rails s````, to launch the app. In your browser, go to ```` localhost:3000````.
+* Fourth, on your terminal navigate to the folder containing the app and run these commands, ```` bundle install ````. Then, ```` rails s````, to launch the app. In your browser, go to ```` localhost:3000````.
 
 ### Remaining Backlog Items
 
-*
+* Deploy the app to Heroku
+* Add ability to add pictures to new posts
+* Clean up the HTML
