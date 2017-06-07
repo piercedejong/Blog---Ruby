@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/auth/google/callback', to: "users#create"
 
+  get '/auth/failure', to: "sessions#failure"
+
   get '/logout', to: "sessions#destroy"
 
   #get '/user_articles', to: "user#show"
