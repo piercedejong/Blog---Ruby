@@ -52,7 +52,10 @@ class ArticlesController < ApplicationController
     end
 
     def set_article
-      @article= current_user.articles.find_by(uuid: params[:id])
+        @article= current_user.articles.find_by(uuid: params[:id])
+      if @article.nil?
+        @article= Article.find_by(uuid: params[:id])
+      end
     end
 
 end
